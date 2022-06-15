@@ -1,0 +1,11 @@
+This application is useful for calculate point from customer over specific range of buying things
+used technology:
+java8
+spring boot
+rest api
+jpaRepository
+Spring component
+h2 database
+Docker-compose.yml
+environment specific application properties file
+logger-sl4j
