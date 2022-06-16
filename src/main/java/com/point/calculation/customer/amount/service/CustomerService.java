@@ -10,7 +10,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -28,9 +27,9 @@ public class CustomerService {
         }
         int point = 0;
         if (Math.round(amount) > 50 && Math.round(amount) < 100) {
-            point = (int) Double.parseDouble(String.valueOf(amount - 50));
-        } else if (amount > 100) {
-            point = (int) Double.parseDouble(String.valueOf((amount - 50) * 1 + (amount - 100) * 1));
+            point = (int) Double.parseDouble(String.valueOf(Math.round(amount) - 50));
+        } else if (Math.round(amount) > 100) {
+            point = (int) Double.parseDouble(String.valueOf((Math.round(amount) - 50) * 1 + (Math.round(amount) - 100) * 1));
         } else {
             point = 0;
         }
@@ -39,17 +38,10 @@ public class CustomerService {
 
     }
 
-    public List<Customer> findAll() {
-        return customerRepository.findAll();
-    }
-
-
-    private void updatePoints(Long id, int points) {
-    }
 
     public Optional<Customer> findCustomerPointsById(Long id) {
-        if(customerRepository.findById(id)==null)
-            throw new CustomerNotFoundException("Customer not found with id,"+id);
+        if (customerRepository.findById(id) == null)
+            throw new CustomerNotFoundException("Customer not found with id," + id);
         return customerRepository.findById(id);
     }
 

@@ -7,5 +7,6 @@ insert into customer (
 insert into CustomerTransaction(
      id,
      amount,
-     purchaseDate )
+     purchaseDate,
+      customer_id)
      values ('1','123.5','2014-04-08 12:30','1');

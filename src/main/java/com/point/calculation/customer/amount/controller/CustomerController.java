@@ -18,10 +18,11 @@ public class CustomerController {
     CustomerService customerService;
 
     @PostMapping(value = "/point")
-   public int points( @RequestParam Double amount) {
+    public int points(@RequestParam Double amount) {
         logger.debug("points");
         return customerService.calculateCustomersPoint(amount);
     }
+
     @PostMapping(value = "/customer")
     public Customer customerSave(@RequestBody Customer customer) {
         logger.debug("customerSave");

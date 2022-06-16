@@ -1,6 +1,7 @@
 package com.point.calculation.customer.amount.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Builder;
 import lombok.Data;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
@@ -8,6 +9,7 @@ import org.hibernate.annotations.OnDeleteAction;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Builder
 @Data
 @Entity(name = "CustomerTransaction")
 @Table(name = "CustomerTransaction")
