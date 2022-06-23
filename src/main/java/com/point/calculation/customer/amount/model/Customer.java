@@ -22,6 +22,10 @@ public class Customer {
     private String lastName;
     @Column(name = "points")
     private int points;
+    /**
+     * notice here we have linktable for child table, but we dont have any column
+     * specific for child,so in parent table we will not have child column
+     */
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "customer_id")
     private Set<CustomerTransaction> customerTransaction;

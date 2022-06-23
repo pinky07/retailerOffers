@@ -1,0 +1,12 @@
+Problem :If you have database settings to be loaded from a particular profile
+ you may need to activate it (no profiles are currently active).
+problem2: Consider defining a bean of type in your configuration
+problem 3:Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+problem4:The injection point has the following annotations:
+         	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+sol: its realted to applicatiom=n.propertues file , when we have multiple file
+we need to activate particular one,spring.profiles.default vs active both op[tion are different
+sol4:spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+
+problem: The child list is saved but they don't take the Id of the parent automatically. How can i force the child to automatically take the id of the parent in Post Request In Postman?
+solution:

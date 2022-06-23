@@ -1,10 +1,10 @@
 SET FOREIGN_KEY_CHECKS = 0;
-TRUNCATE TABLE customer;
-TRUNCATE TABLE CustomerTransaction;
+--TRUNCATE TABLE customer;
+--TRUNCATE TABLE CustomerTransaction;
+DROP TABLE  customer cascade;
+DROP TABLE CustomerTransaction;
 
-DROP TABLE IF EXISTS CustomerTransaction;
-DROP TABLE if exists customer;
-CREATE TABLE Customer(
+CREATE TABLE if not exist Customer(
    id INT IDENTITY  PRIMARY KEY,
     firstName VARCHAR(128) NOT NULL,
     lastName VARCHAR(128) NOT NULL,
@@ -12,7 +12,7 @@ CREATE TABLE Customer(
      points VARCHAR(128) NOT NULL
  );
 
-CREATE TABLE  CustomerTransaction(
+CREATE TABLE if not exist CustomerTransaction(
   id INT IDENTITY PRIMARY KEY,
   amount VARCHAR(128) NOT NULL,
   purchaseDate VARCHAR(128) NOT NULL,

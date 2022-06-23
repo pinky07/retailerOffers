@@ -4,7 +4,6 @@ import com.point.calculation.customer.amount.controller.CustomerController;
 import com.point.calculation.customer.amount.exception.CustomerNotFoundException;
 import com.point.calculation.customer.amount.model.Customer;
 import com.point.calculation.customer.amount.repository.CustomerRepository;
-import com.point.calculation.customer.amount.repository.CustomerTransactionRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +15,8 @@ import java.util.Optional;
 public class CustomerService {
     private static final Logger logger = LoggerFactory.getLogger(CustomerController.class);
     @Autowired
-    CustomerRepository customerRepository;
-    @Autowired
-    CustomerTransactionRepository customerTransactionRepository;
+    private CustomerRepository customerRepository;
+
 
     public int calculateCustomersPoint(Double amount) {
         logger.trace("<<calculateCustomersPoint");
